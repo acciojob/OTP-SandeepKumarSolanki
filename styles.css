@@ -9,7 +9,7 @@
 .container{
 	width : 600px;
 	background-color : bisque;
-	
+	border : 2px solid black;
 	margin : 10px;
 	padding : 20px;
 	display :flex;
@@ -26,7 +26,7 @@
 	align-items : center;
 }
 
-#code-container{
+.code-container{
 	display : flex;
 	flex-wrap : wrap;
 	justify-content : center;
@@ -44,5 +44,5 @@ input{
 	width : 80px;
 	height : 50px;
 	margin: 5px;
-	focus : 
+	border : 0.1px solid black;
 }
