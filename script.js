@@ -1,28 +1,26 @@
-//your JS code here. If required.
+document.addEventListener("DOMContentLoaded", () => {
+    const codeInputs = document.querySelectorAll('.code');
 
-// Function to handle forward typing (focus moves to the next field)
-let nextFocusInput = document.querySelectorAll('.code')
-nextFocusInput.forEach((input, index, inputs) => {
-    input.addEventListener('input', () => {
-        // If the input field has a value, move to the next field
-        if (input.value) {
-            const nextInput = inputs[index + 1];
-            if (nextInput) {
-                nextInput.focus();
+    // Forward typing behavior (when a user types a digit)
+    codeInputs.forEach((input, index) => {
+        input.addEventListener('input', () => {
+            if (input.value && index < codeInputs.length - 1) {
+                // Focus on next input field after typing
+                codeInputs[index + 1].focus();
             }
-        }
+        });
     });
-});
 
-// Function to handle backspace behavior (focus moves to the previous field)
-let prevFocusInput = document.querySelectorAll('.code')
-prevFocusInput.forEach((input, index, inputs) => {
-	input.addEventListener('keydown', (event) => {
-        if (event.key === 'Backspace' && !input.value) {
-            const prevInput = inputs[index - 1];
-            if (prevInput) {
-                prevInput.focus();
+    // Backspace behavior (move focus to previous field)
+    codeInputs.forEach((input, index) => {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && !input.value && index > 0) {
+                // Focus on previous input field when backspace is pressed and current field is empty
+                codeInputs[index - 1].focus();
             }
-        }
+        });
     });
+
+    // Set focus on the first input field on page load
+    codeInputs[0].focus();
 });
