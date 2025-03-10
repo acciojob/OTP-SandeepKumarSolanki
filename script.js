@@ -2,7 +2,7 @@
 
 // Function to handle forward typing (focus moves to the next field)
 let nextFocusInput = document.querySelectorAll('.code')
-nextFocusInput..forEach((input, index, inputs) => {
+nextFocusInput.forEach((input, index, inputs) => {
     input.addEventListener('input', () => {
         // If the input field has a value, move to the next field
         if (input.value) {
@@ -17,7 +17,7 @@ nextFocusInput..forEach((input, index, inputs) => {
 // Function to handle backspace behavior (focus moves to the previous field)
 let prevFocusInput = document.querySelectorAll('.code')
 prevFocusInput.forEach((input, index, inputs) => {
-    input.addEventListener('keydown', (event) => {
+prevFocusInput.addEventListener('keydown', (event) => {
         if (event.key === 'Backspace' && !input.value) {
             const prevInput = inputs[index - 1];
             if (prevInput) {
