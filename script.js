@@ -17,7 +17,7 @@ nextFocusInput.forEach((input, index, inputs) => {
 // Function to handle backspace behavior (focus moves to the previous field)
 let prevFocusInput = document.querySelectorAll('.code')
 prevFocusInput.forEach((input, index, inputs) => {
-prevFocusInput.addEventListener('keydown', (event) => {
+	input.addEventListener('keydown', (event) => {
         if (event.key === 'Backspace' && !input.value) {
             const prevInput = inputs[index - 1];
             if (prevInput) {
